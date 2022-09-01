@@ -1,26 +1,24 @@
-import java.util.ArrayList;
+import java.util.*;
+import java.time.LocalDateTime;
 
 public class Project {
   int ID;
   String description;
   String status;
-  String datetime_begin;
-  String datetime_end;
+  LocalDateTime datetime_begin;
+  LocalDateTime datetime_end;
   User cordinator;
-  ArrayList<User> users;
-  ArrayList<Activity> activities;
-  Double scholarship_value;
+  ArrayList<User> users = new ArrayList<User>();
+  ArrayList<Activity> activities = new ArrayList<Activity>();
+  Map<Double, User> scholarship_values = new HashMap<>();
   String scholarship_period;
 
   public Project(
     int ID,
     String description,
-    String datetime_begin,
-    String datetime_end,
+    LocalDateTime datetime_begin,
+    LocalDateTime datetime_end,
     User cordinator,
-    ArrayList<User> users,
-    ArrayList<Activity> activities,
-    Double scholarship_value,
     String scholarshio_period){
 
     this.ID = ID;
@@ -28,21 +26,22 @@ public class Project {
     this.datetime_begin = datetime_begin;
     this.datetime_end = datetime_end;
     this.cordinator = cordinator;
-    this.users = users;
-    this.activities = activities;
-    this.scholarship_value = scholarship_value;
     this.scholarship_period = scholarshio_period;
   }
 
-  private void addUser(User user){
+  public void addUser(User user){
     users.add(user);
   }
 
-  private void addActivity(Activity activity){
+  public void addScholarship(Double value, User user){
+    scholarship_values.put(value, user);
+  }
+
+  public void addActivity(Activity activity){
     activities.add(activity);
   }
 
-  private void setStatus(String status){
+  public void setStatus(String status){
     this.status = status;
   }
 
