@@ -4,13 +4,13 @@ import java.time.LocalDateTime;
 public class Activity {
   int ID;
   String description;
-  String datetime_begin;
-  String datetime_end;
+  LocalDateTime datetime_begin;
+  LocalDateTime datetime_end;
   User manager;
   ArrayList<User> users;
   Map<String, User> tasks;
 
-  public Activity(String description, String datetime_begin, String datetime_end, User manager){
+  public Activity(String description, LocalDateTime datetime_begin, LocalDateTime datetime_end, User manager){
     this.description = description;
     this.datetime_begin = datetime_begin;
     this.datetime_end = datetime_end;
@@ -35,11 +35,11 @@ public class Activity {
     this.description = description;
   }
 
-  public void setDatetimeBegin(String date_time_begin) {
+  public void setDatetimeBegin(LocalDateTime date_time_begin) {
     this.datetime_begin = date_time_begin;
   }
 
-  public void setDatetimeEnd(String date_time_end) {
+  public void setDatetimeEnd(LocalDateTime date_time_end) {
     this.datetime_end = date_time_end;
   }
 

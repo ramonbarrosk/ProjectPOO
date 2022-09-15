@@ -5,20 +5,20 @@ public class Project {
   int ID;
   String description;
   String status;
-  String datetime_begin;
-  String datetime_end;
+  LocalDateTime datetime_begin;
+  LocalDateTime datetime_end;
   User cordinator;
   ArrayList<User> users = new ArrayList<User>();
   ArrayList<Activity> activities = new ArrayList<Activity>();
   Map<Double, User> scholarship_values = new HashMap<>();
-  String scholarship_period;
+  int scholarship_period;
 
   public Project(
     String description,
-    String datetime_begin,
-    String datetime_end,
+    LocalDateTime datetime_begin,
+    LocalDateTime datetime_end,
     User cordinator,
-    String scholarshio_period){
+    int scholarshio_period){
 
     this.description = description;
     this.datetime_begin = datetime_begin;
@@ -52,11 +52,11 @@ public class Project {
     this.description = description;
   }
 
-  public void setDatetimeBegin(String date_time_begin) {
+  public void setDatetimeBegin(LocalDateTime date_time_begin) {
     this.datetime_begin = date_time_begin;
   }
 
-  public void setDatetimeEnd(String date_time_end) {
+  public void setDatetimeEnd(LocalDateTime date_time_end) {
     this.datetime_end = date_time_end;
   }
 
@@ -64,7 +64,7 @@ public class Project {
     this.cordinator = cordinator;
   }
 
-  public void setScholarshipPeriod(String period) {
+  public void setScholarshipPeriod(int period) {
     this.scholarship_period = period;
   }
 
